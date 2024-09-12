@@ -1,5 +1,18 @@
 <script lang="ts">
+	interface CartItem {
+		name: string;
+		price: number;
+	}
+	interface payment {
+		CartItems: CartItem[];
+		totalPrice: number;
+		changePaid: number;
+		changeBack: number;
+	}
+
 	export let itemsInCart: { name: string; price: number }[];
+	export let allPayments: payment[];
+
 	export let showKeyboard: boolean;
 	export let totalPrice: number = 0;
 	export let changePaid: number = 0;
@@ -7,7 +20,7 @@
 
 	function removeItem(index: number) {
 		itemsInCart = itemsInCart.filter((_, i) => i !== index);
-		console.log(itemsInCart);
+		console.log('itemsInCart', itemsInCart);
 		countItems(itemsInCart);
 		changeBackCount(totalPrice, changePaid);
 	}
@@ -16,7 +29,7 @@
 	}
 
 	function countItems(cart: { name: string; price: number }[]) {
-		console.log(cart);
+		console.log('itemsInCart', cart);
 		totalPrice = 0;
 		cart.forEach((item) => {
 			totalPrice += item.price;
@@ -29,6 +42,23 @@
 			showKeyboard = true;
 		}
 	}
+
+	function completePayment() {
+		let payment: payment = {
+			CartItems: itemsInCart,
+			totalPrice: totalPrice,
+			changePaid: changePaid,
+			changeBack: changeBack
+		};
+		allPayments.push(payment);
+
+		totalPrice = 0;
+		changeBack = 0;
+		changePaid = 0;
+		itemsInCart = [];
+		console.log('allPayments', allPayments);
+	}
+
 	$: countItems(itemsInCart);
 	$: changeBackCount(totalPrice, changePaid);
 </script>
@@ -39,7 +69,9 @@
 		<ul>
 			{#each itemsInCart as item, index}
 				<li>
-					{item.name} - ${item.price.toFixed(2)}
+					{item.name}
+					<br />
+					{item.price.toFixed(2)} kr.
 					<button class="remove-btn" on:click={() => removeItem(index)}>Remove</button>
 				</li>
 			{/each}
@@ -60,7 +92,7 @@
 		</div>
 	</div>
 	<div class="button-container">
-		<button class="btn">Complete Transaction</button>
+		<button class="btn" on:click={() => completePayment()}>Complete Transaction</button>
 		<button class="btn" on:click={() => toggleKeyboard()}>Change</button>
 	</div>
 </div>

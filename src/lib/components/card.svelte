@@ -9,54 +9,35 @@
 
 	let cards: Card[] = [
 		{
-			header: 'Item Header 1',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 49.99
+			header: 'Wraps',
+			image: 'https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/wrap-onecikan.jpg',
+			price: 50.0
 		},
 		{
-			header: 'Item Header 2',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 59.99
+			header: 'Pandekage',
+			image: 'https://mandekogebogen.dk/image/box/2124784/980/50000.jpg?oversize=1',
+			price: 25.0
 		},
 		{
-			header: 'Item Header 3',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 39.99
+			header: 'Pandekage Bål',
+			image: 'https://www.417.dk/images/pandekage-paa-bon-fire-pandekagepande-p.jpg',
+			price: 10.0
 		},
 		{
-			header: 'Item Header 4',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 69.99
+			header: 'Suppe Med Brød',
+			image: 'https://img.cybercook.com.br/receitas/271/minestrone-o-verdadeiro-2.jpeg',
+			price: 30.0
 		},
 		{
-			header: 'Item Header 5',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 89.99
+			header: 'Sodavand',
+			image: 'https://sandwich-cafeen.dk/images/Sodavand-p.jpeg',
+			price: 20.0
 		},
 		{
-			header: 'Item Header 6',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 99.99
-		},
-		{
-			header: 'Item Header 7',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 109.99
-		},
-		{
-			header: 'Item Header 8',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 119.99
-		},
-		{
-			header: 'Item Header 9',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 129.99
-		},
-		{
-			header: 'Item Header 10',
-			image: 'https://placehold.co/600x400/EEE/31343C',
-			price: 139.99
+			header: 'Vand',
+			image:
+				'https://bt.bmcdn.dk/media/cache/resolve/image_1240/image/168/1681380/23785772-vand-fra-denice-kilden.jpg',
+			price: 10.0
 		}
 	];
 
@@ -70,8 +51,8 @@
 	{#each cards as card}
 		<div class="card">
 			<h2>{card.header}</h2>
-			<img src={card.image} alt="Item Image" />
-			<div class="price">{card.price} .kr</div>
+			<img src={card.image} alt="Item Image" style="width: 300px; height: 200px;" />
+			<div class="price">{card.price} kr.</div>
 			<button class="add-btn" on:click={() => additem(card.header, card.price)}>Add to Cart</button>
 		</div>
 	{/each}
