@@ -1,12 +1,17 @@
-<script>
+<script lang="ts">
+	export let doSync: boolean;
+	// export let allPayments: payment[];
+	// export let syncedJson: syncedJson;
+
 	const handleLargeButtonClick = () => {
-		alert('Large button clicked!');
+		doSync = true;
 	};
 </script>
 
 <!-- Small Buttons -->
 
 <!-- Large Button -->
+
 <button class="button button-large" on:click={handleLargeButtonClick}>Sync <br /> ↑↓</button>
 
 <style>

@@ -56,6 +56,7 @@
 		changeBack = 0;
 		changePaid = 0;
 		itemsInCart = [];
+		showKeyboard = false;
 		console.log('allPayments', allPayments);
 	}
 

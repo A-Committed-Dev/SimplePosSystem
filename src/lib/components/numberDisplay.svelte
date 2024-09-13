@@ -6,7 +6,7 @@
 		return value.toLocaleString('da-DK', {
 			style: 'currency',
 			currency: 'DKK',
-			minimumFractionDigits: 3 // No decimal places
+			minimumFractionDigits: 1 // No decimal places
 		});
 	};
 </script>
