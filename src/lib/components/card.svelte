@@ -10,7 +10,8 @@
 	let cards: Card[] = [
 		{
 			header: 'Wraps',
-			image: 'https://cdn.yemek.com/mnresize/1250/833/uploads/2023/03/wrap-onecikan.jpg',
+			image:
+				'https://diabetesprdstorage.blob.core.windows.net/cache/2/5/5/0/b/9/2550b90d176fd3ccab2e3162ed438cd9b7c4ed02.jpg',
 			price: 50.0
 		},
 		{
@@ -38,6 +39,31 @@
 			image:
 				'https://bt.bmcdn.dk/media/cache/resolve/image_1240/image/168/1681380/23785772-vand-fra-denice-kilden.jpg',
 			price: 10.0
+		},
+		{
+			header: 'Wraps - Frivillig',
+			image: 'https://placehold.co/600x400/EEE/31343C',
+			price: 0.0
+		},
+		{
+			header: 'Pandekage - Frivillig',
+			image: 'https://placehold.co/600x400/EEE/31343C',
+			price: 0.0
+		},
+		{
+			header: 'Suppe - Frivillig',
+			image: 'https://placehold.co/600x400/EEE/31343C',
+			price: 0.0
+		},
+		{
+			header: 'Sodavand  - Frivillig',
+			image: 'https://placehold.co/600x400/EEE/31343C',
+			price: 0.0
+		},
+		{
+			header: 'Vand  - Frivillig',
+			image: 'https://placehold.co/600x400/EEE/31343C',
+			price: 0.0
 		}
 	];
 
@@ -51,7 +77,7 @@
 	{#each cards as card}
 		<div class="card">
 			<h2>{card.header}</h2>
-			<img src={card.image} alt="Item Image" style="width: 300px; height: 200px;" />
+			<img src={card.image} alt="Item Image" style="width: 100%; height: 100%;" />
 			<div class="price">{card.price} kr.</div>
 			<button class="add-btn" on:click={() => additem(card.header, card.price)}>Add to Cart</button>
 		</div>

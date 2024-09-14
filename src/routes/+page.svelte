@@ -88,6 +88,9 @@
 
 	function doSyncFunc(doSync: boolean, showMessage: boolean) {
 		if (doSync) {
+			if (showMessage) {
+				alert('Syncing with database pushing ' + allPayments.length + ' payments to server.');
+			}
 			// Send POST request using Axios
 			let doFetch: boolean = false;
 
@@ -106,36 +109,38 @@
 			}
 
 			if (doFetch) {
-				// Fetch data and parse it to the correct types
-				axios
-					.get('/getData.php')
-					.then((response) => {
-						const data = response.data;
-						console.log('Fetched raw data:', data);
+				setTimeout(() => {
+					// Fetch data and parse it to the correct types
+					axios
+						.get('/getData.php')
+						.then((response) => {
+							const data = response.data;
+							console.log('Fetched raw data:', data);
 
-						// Parse the string values into numbers
-						syncedJson = parseData(data);
+							// Parse the string values into numbers
+							syncedJson = parseData(data);
 
-						// Now update the products array
-						products = [
-							syncedJson.items.Wraps,
-							syncedJson.items.Pandekage,
-							syncedJson.items['Pandekage Bål'],
-							syncedJson.items['Suppe Med Brød'],
-							syncedJson.items.Sodavand,
-							syncedJson.items.Vand
-						];
-						console.log('Updated products:', products);
-					})
-					.catch((error) => {
-						console.error('Error fetching data:', error);
-					});
+							// Now update the products array
+							products = [
+								syncedJson.items.Wraps,
+								syncedJson.items.Pandekage,
+								syncedJson.items['Pandekage Bål'],
+								syncedJson.items['Suppe Med Brød'],
+								syncedJson.items.Sodavand,
+								syncedJson.items.Vand
+							];
+							console.log('Updated products:', products);
+						})
+						.catch((error) => {
+							console.error('Error fetching data:', error);
+						});
 
-				allPayments = [];
-				console.log('this is json from db ->', syncedJson);
-				if (showMessage) {
-					alert('Synced with database');
-				}
+					allPayments = [];
+					console.log('this is json from db ->', syncedJson);
+					if (showMessage) {
+						alert('Synced with database');
+					}
+				}, 3000);
 			}
 		}
 	}

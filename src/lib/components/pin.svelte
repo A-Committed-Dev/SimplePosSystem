@@ -2,7 +2,7 @@
 	import FullscreenButton from './fullscreenButton.svelte';
 
 	let pin: string = '';
-	const correctPin: string = '1234';
+	const correctPin: string = '2024';
 	export let unlocked: Boolean;
 	let message: string = '';
 

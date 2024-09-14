@@ -44,6 +44,9 @@
 	}
 
 	function completePayment() {
+		if (changeBack < 0) {
+			changeBack = 0;
+		}
 		let payment: payment = {
 			CartItems: itemsInCart,
 			totalPrice: totalPrice,
