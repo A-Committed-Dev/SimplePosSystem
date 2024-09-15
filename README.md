@@ -1,38 +1,13 @@
-# create-svelte
+# Simple Point of sale System
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is my example of how to use a static website as a simple pos system for your less demanding sale points.
+Written fully in sveletekit with a php backend it gets the job done.
 
-## Creating a project
+![b1](https://github.com/user-attachments/assets/06176c1e-c130-40ce-86fa-5c35d62e96c3)
 
-If you're seeing this, you've probably already done this step. Congrats!
+![b2](https://github.com/user-attachments/assets/4452555e-fb53-4997-83eb-f234bf28f28b)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+![b3](https://github.com/user-attachments/assets/2f593a0f-a9b8-44a3-bb19-9db7bd358d83)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+![b4](https://github.com/user-attachments/assets/aa5b21b6-ad36-444a-8d01-bb812672f4f8)
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
