@@ -77,7 +77,12 @@
 	{#each cards as card}
 		<div class="card">
 			<h2>{card.header}</h2>
-			<img src={card.image} alt="Item Image" style="width: 100%; height: 100%;" />
+			<img
+				src={card.image}
+				alt="Item Image"
+				style="width: 100%; height: 100%;"
+				on:click={() => additem(card.header, card.price)}
+			/>
 			<div class="price">{card.price} kr.</div>
 			<button class="add-btn" on:click={() => additem(card.header, card.price)}>Add to Cart</button>
 		</div>
